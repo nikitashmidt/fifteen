@@ -1,7 +1,12 @@
 const containerNode = document.getElementById('fifteen');
 const itemNodes = Array.from(containerNode.querySelectorAll('.item'));
 const countItems = 16;
+const modal = document.querySelector('.modal');
+const modalBtn = document.querySelector('.ok-button')
 
+modalBtn.addEventListener('click', (e) => {
+  modal.style.display = 'none'
+})
 
 
 if (itemNodes.length !== countItems) {
@@ -191,6 +196,8 @@ const wonClass = 'fifteenWon'
 function addWonClass() {
   setTimeout(() => {
     containerNode.classList.add(wonClass)
+
+    modal.style.display = 'block'
 
     setTimeout(() => {
       containerNode.classList.remove(wonClass)
