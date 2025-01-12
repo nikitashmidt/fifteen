@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const gulpConnect = require('gulp-connect');
 const gulpUglify = require('gulp-uglify');
 const gulpPug = require('gulp-pug');
-const gulpImageMin = require('gulp-imagemin');
 const gulpData = require('gulp-data');
 const gulpStylus = require('gulp-stylus');
 const gulpif = require('gulp-if');
@@ -77,7 +76,7 @@ function pug() {
 
 function images() {
     return gulp.src(srcImages)
-        .pipe(gulpif(isProduction, gulpImageMin()))
+        // .pipe(gulpif(isProduction, gulpImageMin()))
         .pipe(gulp.dest(outputDir))
         .pipe(gulpif(!isProduction, gulpConnect.reload()));
 }
